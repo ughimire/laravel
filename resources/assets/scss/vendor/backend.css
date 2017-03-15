@@ -1539,6 +1539,11 @@ body {
     flex: 1 0 auto; }
   body header, body main, body footer {
     padding-left: 300px; }
+  body .newcontainer {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    width: 100%;
+    max-width: 100%; }
 
 .top-nav {
   color: #f44336; }

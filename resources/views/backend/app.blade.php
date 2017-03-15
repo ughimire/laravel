@@ -38,7 +38,7 @@
 <main>
     <div class="divider"></div>
 
-    <div class="section">
+         <div class="section">
 
         <div class="row">
             @include("backend.shared.breadcrumb")
@@ -47,7 +47,7 @@
 
 
     </div>
-    <div class="container">
+    <div class="container newcontainer">
         @yield("content")
     </div>
 
