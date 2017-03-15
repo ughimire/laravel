@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\AdminLogin;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends AdminControllerAbstract
@@ -28,7 +29,12 @@ class DashboardController extends AdminControllerAbstract
 
         } else {
 
-            return view('backend.dashboard');
+            $adminList = AdminLogin::paginate(3);
+
+
+            $admin['admins'] = $adminList;
+
+            return view('backend.dashboard', $admin);
 
         }
 

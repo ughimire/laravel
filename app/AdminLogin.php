@@ -17,7 +17,7 @@ class AdminLogin extends Authenticatable
      *
      */
 
- 
+    public $timestamps = false;
     protected $primaryKey = 'ID';
 
     public function getAuthPassword()

@@ -4,6 +4,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="{{url('admin/register')}}">Register</a></li>
             <li><a href="{{url('admin/logout')}}">Logout</a></li>
+            <li><a href="{{url('admin')}}">{{  Auth::guard('admin')->user()->Login}}</a></li>
         </ul>
     </div>
 </nav>
