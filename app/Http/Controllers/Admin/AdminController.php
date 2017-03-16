@@ -77,4 +77,21 @@ class AdminController extends AdminControllerAbstract
             'Security' => bcrypt($data['Security']),
         ]);
     }
+
+
+    public function deleteActionAction()
+    {
+
+    }
+
+
+    public function editAction($id)
+    {
+        $admin = AdminLogin::where('ID', $id)->get();
+
+        $data['Admin'] = isset($data['0']) ? $admin : array();
+
+        return view('backend.register', $data);
+
+    }
 }

@@ -58,4 +58,10 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/admin/register', 'AdminController@registerAction');
 
 
+    // delete admin
+
+    Route::get('/admin/delete/{id}', 'AdminController@deleteAction')->where('id', '[0-9]+');
+
+    Route::get('/admin/edit/{id}', 'AdminController@editAction')->where('id', '[0-9]+');
+
 });
