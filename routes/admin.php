@@ -64,4 +64,9 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('/admin/edit/{id}', 'AdminController@editAction')->where('id', '[0-9]+');
 
+    // Category route
+    Route::get('/admin/category', 'CategoryController@listAction');
+    
+    Route::get('/admin/category/add', 'CategoryController@addAction');
+
 });

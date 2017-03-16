@@ -5,7 +5,21 @@
 
     <li class="bold"><a href="{{url('admin')}}" class="waves-effect waves-teal">Dashboard</a></li>
     <li class="bold"><a href="{{url('admin/about')}}" class="waves-effect waves-teal">About</a></li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Content</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="{{url('admin/category')}}">Category</a></li>
+                        <li><a href="{{url('admin/tags')}}">Tags</a></li>
+                        <li><a href="{{url('admin/posts')}}">Posts</a></li>
 
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
 

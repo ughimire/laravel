@@ -11,18 +11,22 @@
     <title>{{ config('app.name', 'Application') }}</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="{{ asset('resources/assets/scss/vendor/materialize.css') }}"
-          media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="{{ asset('resources/assets/scss/vendor/backend.css') }}"
-          media="screen,projection"/>
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
 
+    <link type="text/css" rel="stylesheet" href="{{ asset('resources/assets/scss/vendor/materialize.css') }}"
+          media="screen,projection"/>
+
+
+    <link href="{{ asset('resources/assets/scss/vendor/materialNote.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('resources/assets/css/vendor/codeMirror/codemirror.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('resources/assets/css/vendor/codeMirror/monokai.css') }}" rel="stylesheet"/>
+
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('resources/assets/scss/vendor/backend.css') }}"
+          media="screen,projection"/>
+    @yield("styles")
 </head>
 <body>
 <header>
@@ -38,7 +42,7 @@
 <main>
     <div class="divider"></div>
 
-         <div class="section">
+    <div class="section">
 
         <div class="row">
             @include("backend.shared.breadcrumb")
@@ -85,18 +89,50 @@
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/jquery-3.1.1.min.js') }}"></script>
     <script type="text/javascript"
             src="{{ asset('resources/assets/js/vendor/materialize.min.js') }}"></script>
-
+    <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/ckMaterializeOverrides.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/codeMirror/codemirror.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/codeMirror/xml.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/materialNote.js') }}"></script>
     <script>
 
 
         $(document).ready(function () {
 
-            $('#carousel').carousel();
 
+            var toolbar = [
+                ['style', ['style', 'bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                ['fonts', ['fontsize', 'fontname']],
+                ['color', ['color']],
+                ['undo', ['undo', 'redo', 'help']],
+                ['ckMedia', ['ckImageUploader', 'ckVideoEmbeeder']],
+                ['misc', ['link', 'picture', 'table', 'hr', 'codeview', 'fullscreen']],
+                ['para', ['ul', 'ol', 'paragraph', 'leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton']],
+                ['height', ['lineheight']],
+            ];
+
+            $('.Editor').materialnote({
+                toolbar: toolbar,
+                height: 550,
+                minHeight: 100,
+                defaultBackColor: '#fff'
+            });
+
+            $('.Editor').materialnote({
+                airMode: true,
+                airPopover: [
+                    ['color', ['color']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ul', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture']]
+                ]
+            });
         });
 
 
     </script>
+
+    @yield("scripts")
 </footer>
 
 </body>

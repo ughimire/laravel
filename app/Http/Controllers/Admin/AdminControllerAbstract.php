@@ -22,16 +22,19 @@ class AdminControllerAbstract extends BaseController
 
     protected $guard = "admin";
 
+    public $default_data_per_page = 3;
+
 
     function __construct()
     {
 
-        
+
         if (!Auth::guard($this->guard)->check()) {
 
             return redirect('/lara-admin');
 
         }
+
 
     }
 }

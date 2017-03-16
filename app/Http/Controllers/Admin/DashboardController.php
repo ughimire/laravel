@@ -18,25 +18,12 @@ class DashboardController extends AdminControllerAbstract
     public function dashboard()
     {
 
-        $status = Auth::guard('admin');
+        $adminList = AdminLogin::paginate($this->default_data_per_page);
 
 
-        if ($status != true) {
+        $admin['admins'] = $adminList;
 
-
-            return Redirect::to('lara-admin');
-
-
-        } else {
-
-            $adminList = AdminLogin::paginate(3);
-
-
-            $admin['admins'] = $adminList;
-
-            return view('backend.dashboard', $admin);
-
-        }
+        return view('backend.dashboard', $admin);
 
 
     }
