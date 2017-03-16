@@ -87,11 +87,15 @@ class AdminController extends AdminControllerAbstract
 
     public function editAction($id)
     {
+
+        if ($id != Auth::guard('admin')->user()->ID) {
+
+            return Redirect::to('admin');
+        }
         $admin = AdminLogin::where('ID', $id)->get();
 
         $data['Admin'] = isset($data['0']) ? $admin : array();
 
         return view('backend.register', $data);
-
     }
 }
