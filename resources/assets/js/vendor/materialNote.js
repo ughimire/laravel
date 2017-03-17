@@ -5395,6 +5395,8 @@
                     $closeBtn = $imageDialog.find('.btnClose');
 
                 $imageDialog.openModal();
+
+
                 // Cloning imageInput to clear element.
                 $imageInput.replaceWith($imageInput.clone()
                     .on('change', function () {
@@ -6580,10 +6582,10 @@
 
         var tplShortcutText = function (lang) {
             var keys = [
-                {kbd: '⌘ + B', text: lang.font.bold},
-                {kbd: '⌘ + I', text: lang.font.italic},
-                {kbd: '⌘ + U', text: lang.font.underline},
-                {kbd: '⌘ + \\', text: lang.font.clear}
+                {kbd: 'âŒ˜ + B', text: lang.font.bold},
+                {kbd: 'âŒ˜ + I', text: lang.font.italic},
+                {kbd: 'âŒ˜ + U', text: lang.font.underline},
+                {kbd: 'âŒ˜ + \\', text: lang.font.clear}
             ];
 
             return tplShortcut(lang.shortcut.textFormatting, keys);
@@ -6591,11 +6593,11 @@
 
         var tplShortcutAction = function (lang) {
             var keys = [
-                {kbd: '⌘ + Z', text: lang.history.undo},
-                {kbd: '⌘ + ⇧ + Z', text: lang.history.redo},
-                {kbd: '⌘ + ]', text: lang.paragraph.indent},
-                {kbd: '⌘ + [', text: lang.paragraph.outdent},
-                {kbd: '⌘ + ENTER', text: lang.hr.insert}
+                {kbd: 'âŒ˜ + Z', text: lang.history.undo},
+                {kbd: 'âŒ˜ + â‡§ + Z', text: lang.history.redo},
+                {kbd: 'âŒ˜ + ]', text: lang.paragraph.indent},
+                {kbd: 'âŒ˜ + [', text: lang.paragraph.outdent},
+                {kbd: 'âŒ˜ + ENTER', text: lang.hr.insert}
             ];
 
             return tplShortcut(lang.shortcut.action, keys);
@@ -6603,12 +6605,12 @@
 
         var tplShortcutPara = function (lang) {
             var keys = [
-                {kbd: '⌘ + ⇧ + L', text: lang.paragraph.left},
-                {kbd: '⌘ + ⇧ + E', text: lang.paragraph.center},
-                {kbd: '⌘ + ⇧ + R', text: lang.paragraph.right},
-                {kbd: '⌘ + ⇧ + J', text: lang.paragraph.justify},
-                {kbd: '⌘ + ⇧ + NUM7', text: lang.lists.ordered},
-                {kbd: '⌘ + ⇧ + NUM8', text: lang.lists.unordered}
+                {kbd: 'âŒ˜ + â‡§ + L', text: lang.paragraph.left},
+                {kbd: 'âŒ˜ + â‡§ + E', text: lang.paragraph.center},
+                {kbd: 'âŒ˜ + â‡§ + R', text: lang.paragraph.right},
+                {kbd: 'âŒ˜ + â‡§ + J', text: lang.paragraph.justify},
+                {kbd: 'âŒ˜ + â‡§ + NUM7', text: lang.lists.ordered},
+                {kbd: 'âŒ˜ + â‡§ + NUM8', text: lang.lists.unordered}
             ];
 
             return tplShortcut(lang.shortcut.paragraphFormatting, keys);
@@ -6616,13 +6618,13 @@
 
         var tplShortcutStyle = function (lang) {
             var keys = [
-                {kbd: '⌘ + NUM0', text: lang.style.normal},
-                {kbd: '⌘ + NUM1', text: lang.style.h1},
-                {kbd: '⌘ + NUM2', text: lang.style.h2},
-                {kbd: '⌘ + NUM3', text: lang.style.h3},
-                {kbd: '⌘ + NUM4', text: lang.style.h4},
-                {kbd: '⌘ + NUM5', text: lang.style.h5},
-                {kbd: '⌘ + NUM6', text: lang.style.h6}
+                {kbd: 'âŒ˜ + NUM0', text: lang.style.normal},
+                {kbd: 'âŒ˜ + NUM1', text: lang.style.h1},
+                {kbd: 'âŒ˜ + NUM2', text: lang.style.h2},
+                {kbd: 'âŒ˜ + NUM3', text: lang.style.h3},
+                {kbd: 'âŒ˜ + NUM4', text: lang.style.h4},
+                {kbd: 'âŒ˜ + NUM5', text: lang.style.h5},
+                {kbd: 'âŒ˜ + NUM6', text: lang.style.h6}
             ];
 
             return tplShortcut(lang.shortcut.documentStyle, keys);
@@ -6656,7 +6658,7 @@
         };
 
         var replaceMacKeys = function (sHtml) {
-            return sHtml.replace(/⌘/g, 'Ctrl').replace(/⇧/g, 'Shift');
+            return sHtml.replace(/âŒ˜/g, 'Ctrl').replace(/â‡§/g, 'Shift');
         };
 
         var tplDialogInfo = {
@@ -6751,7 +6753,7 @@
 
         var representShortcut = function (str) {
             if (agent.isMac) {
-                str = str.replace('CMD', '⌘').replace('SHIFT', '⇧');
+                str = str.replace('CMD', 'âŒ˜').replace('SHIFT', 'â‡§');
             }
 
             return str.replace('BACKSLASH', '\\')
@@ -7289,6 +7291,13 @@
     /*
      * extend $.fn
      */
+
+    var _stack = 0,
+        _lastID = 0,
+        _generateID = function () {
+            _lastID++;
+            return 'materialize-lean-overlay-' + _lastID;
+        };
     $.fn.extend({
         /**
          * @method
@@ -7459,7 +7468,6 @@
                 tabContainer.tabs();
             });
 
-            //$('.note-editor').find('button').removeAttr('type').attr('type', 'button');
             return this;
         },
 
@@ -7538,6 +7546,161 @@
             });
 
             return this;
+        }
+    });
+
+
+    $.fn.extend({
+        closeModal: function (options) {
+
+            var defaults = {
+                    out_duration: 250,
+                    complete: undefined
+                },
+                $modal = $(this),
+                overlayID = $modal.data('overlay-id'),
+                $overlay = $('#' + overlayID);
+
+            options = $.extend(defaults, options);
+
+            // Disable scrolling
+            $('body').css('overflow', '');
+
+            $modal.find('.modal-close').off('click.close');
+            $(document).off('keyup.leanModal' + overlayID);
+
+            $overlay.velocity({opacity: 0}, {duration: options.out_duration, queue: false, ease: "easeOutQuart"});
+
+
+            // Define Bottom Sheet animation
+            if ($modal.hasClass('bottom-sheet')) {
+                $modal.velocity({bottom: "-100%", opacity: 0}, {
+                    duration: options.out_duration,
+                    queue: false,
+                    ease: "easeOutCubic",
+                    // Handle modal ready callback
+                    complete: function () {
+                        $overlay.css({display: "none"});
+
+                        // Call complete callback
+                        if (typeof(options.complete) === "function") {
+                            options.complete();
+                        }
+                        $overlay.remove();
+                        _stack--;
+                    }
+                });
+            }
+            else {
+                $modal.velocity(
+                    {top: options.starting_top, opacity: 0, scaleX: 0.7}, {
+                        duration: options.out_duration,
+                        complete: function () {
+
+                            $(this).css('display', 'none');
+                            // Call complete callback
+                            if (typeof(options.complete) === "function") {
+                                options.complete();
+                            }
+                            $overlay.remove();
+                            _stack--;
+                        }
+                    }
+                );
+            }
+        }
+    });
+
+
+    $.fn.extend({
+        openModal: function (options) {
+
+            $('body').css('overflow', 'hidden');
+
+            var defaults = {
+                    opacity: 0.5,
+                    in_duration: 350,
+                    out_duration: 250,
+                    ready: undefined,
+                    complete: undefined,
+                    dismissible: true,
+                    starting_top: '4%'
+                },
+                overlayID = _generateID(),
+                $modal = $(this),
+                $overlay = $('<div class="lean-overlay"></div>'),
+                lStack = (++_stack);
+
+            // Store a reference of the overlay
+            $overlay.attr('id', overlayID).css('z-index', 1000 + lStack * 2);
+            $modal.data('overlay-id', overlayID).css('z-index', 1000 + lStack * 2 + 1);
+
+            $("body").append($overlay);
+
+            // Override defaults
+            options = $.extend(defaults, options);
+
+            if (options.dismissible) {
+                $overlay.click(function () {
+                    $modal.closeModal(options);
+                });
+                // Return on ESC
+                $(document).on('keyup.leanModal' + overlayID, function (e) {
+                    if (e.keyCode === 27) {   // ESC key
+                        $modal.closeModal(options);
+                    }
+                });
+            }
+
+            $modal.find(".modal-close").on('click.close', function (e) {
+                $modal.closeModal(options);
+            });
+
+            $overlay.css({display: "block", opacity: 0});
+
+            $modal.css({
+                display: "block",
+                opacity: 0
+            });
+
+            $overlay.velocity({opacity: options.opacity}, {
+                duration: options.in_duration,
+                queue: false,
+                ease: "easeOutCubic"
+            });
+            $modal.data('associated-overlay', $overlay[0]);
+
+            // Define Bottom Sheet animation
+            if ($modal.hasClass('bottom-sheet')) {
+                $modal.velocity({bottom: "0", opacity: 1}, {
+                    duration: options.in_duration,
+                    queue: false,
+                    ease: "easeOutCubic",
+                    // Handle modal ready callback
+                    complete: function () {
+                        if (typeof(options.ready) === "function") {
+                            options.ready();
+                        }
+                    }
+                });
+            }
+            else {
+                $.Velocity.hook($modal, "scaleX", 0.7);
+                $modal.css({top: options.starting_top});
+                $modal.velocity({top: "10%", opacity: 1, scaleX: '1'}, {
+                    duration: options.in_duration,
+                    queue: false,
+                    ease: "easeOutCubic",
+                    // Handle modal ready callback
+                    complete: function () {
+                        if (typeof(options.ready) === "function") {
+                            options.ready();
+                        }
+                    }
+                });
+            }
+
+
         }
     });
 }));

@@ -6374,17 +6374,16 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* variables 
 =================================================================================*/
 .editorDialogs .modal, .note-editor .modal {
-  background-color: #bdbdbd;
-  color: #fafafa;
+  background-color: #e1f5fe;
   z-index: 1057 !important;
   backface-visibility: hidden; }
   .editorDialogs .modal .input-field input:not([readonly]), .editorDialogs .modal .input-field input.datepicker, .note-editor .modal .input-field input:not([readonly]), .note-editor .modal .input-field input.datepicker {
-    border-color: #fafafa !important; }
+    border-color: !important; }
   .editorDialogs .modal .input-field input:focus:not([readonly]), .editorDialogs .modal .input-field input.datepicker:focus, .editorDialogs .modal textarea.materialize-textarea:focus:not([readonly]), .note-editor .modal .input-field input:focus:not([readonly]), .note-editor .modal .input-field input.datepicker:focus, .note-editor .modal textarea.materialize-textarea:focus:not([readonly]) {
     box-shadow: 0 1px 0 0 #9c27b0 !important;
     border-color: #9c27b0 !important; }
   .editorDialogs .modal label, .editorDialogs .modal .input-field input:not([readonly]) + label, .editorDialogs .modal .input-field input.datepicker + label, .editorDialogs .modal .input-field .prefix, .editorDialogs .modal .note-editor + label, .note-editor .modal label, .note-editor .modal .input-field input:not([readonly]) + label, .note-editor .modal .input-field input.datepicker + label, .note-editor .modal .input-field .prefix, .note-editor .modal .note-editor + label {
-    color: #fafafa !important; }
+    color: !important; }
   .editorDialogs .modal .input-field input:focus:not([readonly]) + label, .editorDialogs .modal .input-field input.datepicker:focus + label, .editorDialogs .modal .input-field .prefix.active, .editorDialogs .modal textarea.materialize-textarea:focus:not([readonly]) + label, .note-editor .modal .input-field input:focus:not([readonly]) + label, .note-editor .modal .input-field input.datepicker:focus + label, .note-editor .modal .input-field .prefix.active, .note-editor .modal textarea.materialize-textarea:focus:not([readonly]) + label {
     color: #9c27b0 !important; }
   .editorDialogs .modal .btn, .editorDialogs .modal .btn-large, .note-editor .modal .btn, .note-editor .modal .btn-large {
@@ -6394,7 +6393,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .editorDialogs .modal .btn.disabled, .editorDialogs .modal .disabled.btn-large, .note-editor .modal .btn.disabled, .note-editor .modal .disabled.btn-large {
     background-color: #751212 !important; }
   .editorDialogs .modal .modal-footer, .note-editor .modal .modal-footer {
-    background-color: #a4a4a4; }
+    background-color: #b0e5fc; }
     .editorDialogs .modal .modal-footer .btnClose, .note-editor .modal .modal-footer .btnClose {
       margin-right: 15px;
       background-color: #4a148c; }
@@ -6406,26 +6405,26 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .note-editor .note-editable::-webkit-scrollbar, .editorDialogs .modal-content::-webkit-scrollbar, .note-editor .note-color-palette::-webkit-scrollbar, .note-editor .note-codable::-webkit-scrollbar, .modal.modal-fixed-footer .modal-content::-webkit-scrollbar {
   width: 17px !important; }
 .note-editor .note-editable::-webkit-scrollbar-track, .editorDialogs .modal-content::-webkit-scrollbar-track, .note-editor .note-color-palette::-webkit-scrollbar-track, .note-editor .note-codable::-webkit-scrollbar-track, .modal.modal-fixed-footer .modal-content::-webkit-scrollbar-track {
-  background-color: #bdbdbd !important; }
+  background-color: #e1f5fe !important; }
 .note-editor .note-editable::-webkit-scrollbar-thumb, .editorDialogs .modal-content::-webkit-scrollbar-thumb, .note-editor .note-color-palette::-webkit-scrollbar-thumb, .note-editor .note-codable::-webkit-scrollbar-thumb, .modal.modal-fixed-footer .modal-content::-webkit-scrollbar-thumb {
-  background-color: #f0f0f0 !important; }
+  background-color: white !important; }
 .note-editor .note-editable::-webkit-scrollbar-thumb:hover, .editorDialogs .modal-content::-webkit-scrollbar-thumb:hover, .note-editor .note-color-palette::-webkit-scrollbar-thumb:hover, .note-editor .note-codable::-webkit-scrollbar-thumb:hover, .modal.modal-fixed-footer .modal-content::-webkit-scrollbar-thumb:hover {
   background-color: white !important; }
 
 .note-editor {
   position: relative;
-  border-left: 3px solid #bdbdbd;
-  border-bottom: 3px solid #bdbdbd;
-  border-right: 3px solid #bdbdbd; }
+  border-left: 3px solid #e1f5fe;
+  border-bottom: 3px solid #e1f5fe;
+  border-right: 3px solid #e1f5fe; }
   .note-editor .img-circle {
     border-radius: 50%; }
   .note-editor .img-rounded {
     border-radius: 5%; }
   .note-editor .img-thumbnail {
-    border: solid 5px #bdbdbd;
+    border: solid 5px #e1f5fe;
     height: 200px; }
   .note-editor .img-bordered {
-    border: solid 5px #bdbdbd; }
+    border: solid 5px #e1f5fe; }
   .note-editor .btn:hover, .note-editor .btn-large:hover {
     background-color: #3b3b3b !important; }
   .note-editor .btn.active, .note-editor .active.btn-large {
@@ -6452,7 +6451,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .note-editor .transparent {
     opacity: 0; }
   .note-editor .note-resizebar {
-    background-color: #bdbdbd;
+    background-color: #e1f5fe;
     width: 100%;
     height: 13px;
     cursor: ns-resize;
@@ -6460,11 +6459,10 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     .note-editor .note-resizebar .note-icon-bar {
       width: 20px;
       margin: 2px auto;
-      border-top: 2px solid #f0f0f0; }
+      border-top: 2px solid white; }
   .note-editor .note-toolbar {
     position: relative;
-    color: #fafafa;
-    background-color: #bdbdbd;
+    background-color: #e1f5fe;
     margin: 0;
     z-index: 1052; }
     .note-editor .note-toolbar ul {
@@ -6526,14 +6524,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
       padding: 5px;
       margin: 17px;
       font-size: 15px;
-      color: #fafafa;
       background-color: #212121;
       z-index: 5; }
 
 .note-dialog .note-help-dialog {
-  color: #bdbdbd; }
-  .note-dialog .note-help-dialog h4 {
-    color: #fafafa; }
+  color: #e1f5fe; }
   .note-dialog .note-help-dialog thead {
     background-color: #9c27b0; }
   .note-dialog .note-help-dialog tbody {
@@ -6572,14 +6567,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .note-editor .note-palette-title, .popover .note-palette-title {
   padding: 0 !important; }
 .note-editor .colorName, .popover .colorName {
-  display: inline-block;
-  color: #fafafa; }
+  display: inline-block; }
   @media only screen and (max-width: 600px) {
     .note-editor .colorName, .popover .colorName {
       display: none; } }
 .note-editor .note-color-palette, .popover .note-color-palette {
   line-height: 10px;
-  border: solid 3px #bdbdbd;
+  border: solid 3px #e1f5fe;
   padding: 0 !important;
   overflow-x: scroll;
   overflow-y: hidden; }
@@ -6608,14 +6602,14 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .note-editor .dropdown-menu.note-check, .popover .dropdown-menu.note-check {
     min-width: 80px; }
   .note-editor .dropdown-menu label, .popover .dropdown-menu label {
-    color: #fafafa !important; }
+    color: !important; }
 .note-editor ul.dropdown-menu, .popover ul.dropdown-menu {
   position: absolute;
   top: 20px;
-  background-color: #d7d7d7;
-  border-left: 3px solid #bdbdbd;
-  border-bottom: 3px solid #bdbdbd;
-  border-right: 3px solid #bdbdbd; }
+  background-color: white;
+  border-left: 3px solid #e1f5fe;
+  border-bottom: 3px solid #e1f5fe;
+  border-right: 3px solid #e1f5fe; }
   .note-editor ul.dropdown-menu#colors, .popover ul.dropdown-menu#colors {
     width: 342px; }
     .note-editor ul.dropdown-menu#colors .indicator, .popover ul.dropdown-menu#colors .indicator {
@@ -6624,9 +6618,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .note-editor ul.dropdown-menu .colorTable, .popover ul.dropdown-menu .colorTable {
     padding: 3px 0; }
   .note-editor ul.dropdown-menu .tabs, .popover ul.dropdown-menu .tabs {
-    background-color: #bdbdbd; }
+    background-color: #e1f5fe; }
     .note-editor ul.dropdown-menu .tabs:hover, .popover ul.dropdown-menu .tabs:hover {
-      background-color: #bdbdbd; }
+      background-color: #e1f5fe; }
     .note-editor ul.dropdown-menu .tabs .tab a, .note-editor ul.dropdown-menu .tabs .tab a:hover, .popover ul.dropdown-menu .tabs .tab a, .popover ul.dropdown-menu .tabs .tab a:hover {
       color: #FF1744; }
     .note-editor ul.dropdown-menu .tabs .indicator, .popover ul.dropdown-menu .tabs .indicator {
@@ -6640,8 +6634,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .note-popover .popover {
   position: absolute;
-  max-width: none;
-  color: #fafafa; }
+  max-width: none; }
   .note-popover .popover .arrow {
     width: 0;
     height: 0;

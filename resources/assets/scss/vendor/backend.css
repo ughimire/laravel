@@ -1540,8 +1540,8 @@ body {
   body header, body main, body footer {
     padding-left: 300px; }
   body .newcontainer {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     width: 100%;
     max-width: 100%; }
   body .custom-action-btn {

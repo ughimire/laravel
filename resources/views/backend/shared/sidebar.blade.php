@@ -20,6 +20,8 @@
 
         </ul>
     </li>
+    <li class="bold"><a href="{{url('admin/media')}}" class="waves-effect waves-teal">Media</a></li>
+
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
 

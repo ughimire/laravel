@@ -88,7 +88,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/jquery-3.1.1.min.js') }}"></script>
     <script type="text/javascript"
-            src="{{ asset('resources/assets/js/vendor/materialize.min.js') }}"></script>
+            src="{{ asset('resources/assets/js/vendor/materialize.js') }}"></script>
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/ckMaterializeOverrides.js') }}"></script>
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/codeMirror/codemirror.js') }}"></script>
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/codeMirror/xml.js') }}"></script>
@@ -117,16 +117,16 @@
                 defaultBackColor: '#fff'
             });
 
-            $('.Editor').materialnote({
-                airMode: true,
-                airPopover: [
-                    ['color', ['color']],
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['para', ['ul', 'paragraph']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'picture']]
-                ]
-            });
+            /*$('.Editor').materialnote({
+             airMode: true,
+             airPopover: [
+             ['color', ['color']],
+             ['font', ['bold', 'underline', 'clear']],
+             ['para', ['ul', 'paragraph']],
+             ['table', ['table']],
+             ['insert', ['link', 'picture']]
+             ]
+             });*/
         });
 
 

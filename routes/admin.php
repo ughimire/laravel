@@ -66,7 +66,9 @@ Route::group(['middleware' => 'admin'], function () {
 
     // Category route
     Route::get('/admin/category', 'CategoryController@listAction');
-    
+
     Route::get('/admin/category/add', 'CategoryController@addAction');
+
+    Route::get('/admin/media', 'MediaController@indexAction');
 
 });
