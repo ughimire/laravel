@@ -71,13 +71,12 @@
     FileManager.prototype.initStyle = function (object) {
 
         object.css({
-
             "min-height": "400px",
             "width": "100%",
             "max-width": "100%",
             "background": "#e1e1e1",
             "padding": "10px",
-            "border": "1px solid #919191"
+            "border": "1px solid #919191
 
         });
 
