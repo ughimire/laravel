@@ -5387,6 +5387,7 @@
          * @return {Promise}
          */
         this.showImageDialog = function ($editable, $dialog) {
+
             return $.Deferred(function (deferred) {
                 var $imageDialog = $dialog.find('.note-image-dialog');
                 var $imageInput = $dialog.find('.note-image-input'),
@@ -6110,6 +6111,7 @@
                 return modal;
             };
 
+
         var tplButtonInfo = {
             picture: function (lang, options) {
                 return tplIconButton(options.iconPrefix + options.icons.image.image, {
@@ -6673,24 +6675,25 @@
                 }
 
                 var body = '<div class="row">' +
-                    '<div class="col s12">' +
-                    '<div class="file-field input-field">' +
-                    '<div class="btn">' +
-                    '<span>' + lang.image.image + '</span>' +
-                    '<input class="note-image-input" name="files" type="file" />' +
-                    '</div>' +
-                    '<div class="file-path-wrapper">' +
-                    '<input class="file-path" type="text" />' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="row">' +
-                    '<div class="input-field col s12">' +
-                    '<input class="note-image-url" type="text" />' +
-                    '<label>' + lang.image.url + '</label>' +
-                    '</div>' +
-                    '</div>';
+                        '<div class="col s12">' +
+                        '<div class="file-field input-field">' +
+                        '<div class="btn">' +
+                        '<span>' + lang.image.image + '</span>' +
+                        /*'<input class="note-image-input" name="files" type="file" />' +*/
+                        '</div>' +
+                        '<div class="file-path-wrapper">' +
+                        '<input class="file-path" type="text" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="row">' +
+                        '<div class="input-field col s12">' +
+                        '<input class="note-image-url" type="text" />' +
+                        '<label>' + lang.image.url + '</label>' +
+                        '</div>' +
+                        '</div>'
+                    ;
 
                 var footer = '<button href="#" class="waves-effect waves-light btn note-image-btn disabled" disabled>' + lang.image.insert + '</button>' +
                     '<button class="waves-effect waves-light btn btnClose">' + lang.shortcut.close + '</button>';

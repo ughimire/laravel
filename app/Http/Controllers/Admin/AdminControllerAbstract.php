@@ -28,7 +28,6 @@ class AdminControllerAbstract extends BaseController
     function __construct()
     {
 
-
         if (!Auth::guard($this->guard)->check()) {
 
             return redirect('/lara-admin');
