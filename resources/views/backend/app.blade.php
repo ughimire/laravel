@@ -85,6 +85,21 @@
         </div>
     </div>
 
+
+    <script type="text/javascript">
+
+        /*
+         Initialize global variable for javascript
+
+         */
+
+
+        var BASE_URL = '{{ url('/') }}/';
+        var BASE_PATH = '{{ base_path() }}/';
+        var RESOURCES_PATH = '{{ asset('/resources/') }}/';
+
+
+    </script>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="{{ asset('resources/assets/js/vendor/jquery-3.1.1.min.js') }}"></script>
     <script type="text/javascript"
