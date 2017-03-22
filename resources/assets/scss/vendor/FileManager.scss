@@ -1,0 +1,220 @@
+.file-manager-wrapper {
+  min-height: 400px;
+  width: 100%;
+  max-width: 100%;
+  background: #e1e1e1;
+  padding: 10px;
+  border: 1px solid #919191;
+
+  .file-manager-sidebar {
+    min-height: 300px;
+    width: 15%;
+    max-width: 15%;
+    background: #F2F1F0;
+    border-right: 1px solid #D3D0CD;
+    float: left;
+  }
+
+  .file-manager-body-content {
+    min-height: 300px;
+    width: 85%;
+    max-width: 85%;
+    background: #ffffff;
+    float: right;
+    position: relative;
+  }
+  .file-manager-header {
+    position: relative;
+    z-index: 10;
+    min-height: 67px;
+    width: 100%;
+    max-width: 100%;
+    float: none;
+    h1 {
+      font-size: 13px;
+      line-height: 13px;
+      margin: 0;
+      padding: 0 0 0 12px;
+      display: inline-block;
+      font-weight: bolder;
+      color: #5D5655;
+      width: 100%;
+    }
+    #fm_prev {
+
+      margin: 6px 0 5px 12px;
+      cursor: pointer;
+      padding: 0 0 0 12px;
+      display: inline-block;
+      height: 36px;
+      float: left;
+      width: 35px;
+    }
+    #fm_next {
+
+      margin: 6px 0 5px 0;
+      cursor: pointer;
+      padding: 0;
+      display: inline-block;
+      height: 36px;
+      float: left;
+      width: 35px;
+
+    }
+    .fm_directory_path {
+
+      height: 32px;
+      width: auto;
+      padding-left: 8px;
+      padding-right: 8px;
+      line-height: 29px;
+      border: 1px solid #C7BBB0;
+      display: inline-block;
+      float: left;
+      margin-top: 7px;
+      cursor: pointer;
+      color: rgb(93, 86, 85);
+      border-right: 0;
+
+    }
+    .fm_directory_path.first {
+      margin-left: 20px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .fm_directory_path.last {
+      border-right: 1px solid #C7BBB0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      font-weight: bold;
+      background-color: #f8f8f8;
+    }
+    .fm_search, .fm_grid, .fm_list {
+
+      height: 32px;
+      width: 34px;
+      padding-left: 8px;
+      padding-right: 8px;
+      line-height: 29px;
+      border: 1px solid #C7BBB0;
+      display: inline-block;
+      float: right;
+      margin-top: 7px;
+      cursor: pointer;
+      color: rgb(93, 86, 85);
+
+    }
+    .fm_search.active {
+
+      background-color: #fff;
+    }
+    .fm_search {
+
+      margin-right: 20px;
+      border-radius: 5px;
+
+    }
+    .fm_grid {
+      margin-right: 20px;
+      border-left: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+    }
+    .fm_list {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      border-left: 0;
+    }
+  }
+  .fm_search_block {
+
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    height: 38px;
+    background: #FAF8F7;
+    margin-top: -38px;
+    border: none;
+    transition: margin 0.5s ease-in-out;
+    padding-top: 5px;
+
+    .fm_search_icon {
+      height: 30px;
+      width: 30px;
+      padding-left: 8px;
+      padding-right: 8px;
+      line-height: 29px;
+      border: none;
+      display: inline-block;
+      float: left;
+      margin-top: 7px;
+
+      color: rgb(93, 86, 85);
+      margin-right: 20px;
+      border-radius: 5px;
+      position: absolute;
+      left: 12px;
+      top: -1px;
+
+    }
+    .fm_search_box {
+      width: 80%;
+      float: left;
+      margin: 0 0 0 8px;
+      height: 30px;
+      background: #fff;
+      border: 1px solid #929292;
+      border-radius: 10px;
+      padding-left: 35px;
+
+      &:focus {
+        box-shadow: none;
+        border: 1px solid #F08357;
+      }
+
+    }
+    .fm_search_directory, .fm_all_files, .fm_plus {
+
+      height: 30px;
+      width: auto;
+      padding: 0 10px;
+      display: block;
+      float: right;
+      cursor: pointer;
+      line-height: 30px;
+      box-shadow: inset 3px -4px 8px 4px #e0d9d1;
+      color:#5D5655;
+    }
+  }
+  .fm-search-show {
+
+    margin-top: 0;
+  }
+  .fm_search_directory {
+
+    border: 1px solid #c7c7c7;
+
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    border-right: 0;
+  }
+  .fm_all_files {
+
+    border: 1px solid #c7c7c7;
+     border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 10px;
+
+  }
+  .fm_plus {
+
+    border: 1px solid #c7c7c7;
+    border-radius: 10px;
+    margin-right:20px;;
+  }
+
+}
+
